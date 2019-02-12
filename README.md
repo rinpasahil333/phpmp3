@@ -41,9 +41,9 @@ Later we will make it unified and will delete one of the includes folder.</p>
 <ol>
   <li>Viewable Seprate Pages For Categories, Albums, Artist, Songs.</li>
   <li>Responsivly display content in smaller devices i.e. mobiles, smartphone.</li>
-  <li> Url simplification. </li
+  <li> Url simplification. </li>
   <li> Audio Player. </li>
-  <li> Single Page Transition.</li
+  <li> Single Page Transition.</li>
   <li> Seperate Sections For Artists that willl Allow them to upload their Songs.</li>
 </ol>
   
