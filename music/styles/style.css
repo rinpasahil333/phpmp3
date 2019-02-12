@@ -1,0 +1,125 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+h1{
+ background-color: #ff3300;
+text-align:center;
+border-radius: 10px 10px 12px 12px;
+margin: -10px -40px;
+padding: 15px;
+}
+#main{
+width:560px;
+margin:50px auto;
+ 
+font-family: 'Raleway', sans-serif;
+}
+
+#main1{
+width:560px;
+margin-top: 20px;
+margin-left: 300px; 
+font-family: 'Raleway', sans-serif;
+}
+
+h2{
+background-color: #FEFFED;
+text-align:center;
+border-radius: 10px 10px 0 0;
+margin: -10px -40px;
+padding: 15px;
+}
+
+hr{
+border:0;
+border-bottom:1px solid #ccc;
+margin: 10px -40px;
+margin-bottom: 30px;
+}
+
+#login{
+width:600px;
+float: left;
+border-radius: 10px;
+font-family:raleway;
+border: 2px solid #ccc;
+padding: 10px 40px 25px;
+margin: 50px -60px;
+margin-top: 50px;
+}
+#login1{
+width:600px;
+float: left;
+border-radius: 10px;
+font-family:raleway;
+border: 2px solid #ccc;
+padding: 10px 60px 25px;
+margin: 50px 25%;
+margin-top: 50px;
+margin-left: -20px;
+}
+
+
+input[type=text],input[type=email]{
+width:99.5%;
+padding: 10px;
+margin-top: 4px;
+border: 1px solid #ccc;
+padding-left: 12px;
+font-size: 16px;
+font-family:raleway;
+}
+
+input[type=submit],#cat{
+width: 100%;
+background-color:#00bfff;
+color: white;
+border: 2px solid #00bfgf;
+padding: 10px;
+font-size:20px;
+cursor:pointer;
+border-radius: 5px;
+margin-bottom: -12px;
+}
+
+/*-----------------------------------------------------------------
+css settings for right side advertisement
+------------------------------------------------------------------*/
+#formget{
+float:right;
+}
+/*
+h1 {
+margin-left: -85px;
+}*/
+
+
+a:link, a:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+
+a:hover, a:active {
+    background-color: red;
+}
+
+table
+{
+	border-radius: 5px;
+  background: #ccc;
+  border: 3px black;
+  border-collapse: collapse;
+  box-shadow: 5px 5px 5px #ccc;
+  font-size: 20px;
+}
+
+th, td 
+{
+	padding: 2px;
+	border-spacing: 5px;
+	box-shadow: 3px 3px 2px #ccc;
+}
