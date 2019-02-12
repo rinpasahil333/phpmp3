@@ -45,5 +45,6 @@ Later we will make it unified and will delete one of the includes folder.</p>
   <li> Audio Player. </li>
   <li> Single Page Transition.</li>
   <li> Seperate Sections For Artists that willl Allow them to upload their Songs.</li>
+  <li> Different Sorting options for results</li>
 </ol>
   
