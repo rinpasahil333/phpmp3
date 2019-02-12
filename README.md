@@ -1,6 +1,6 @@
 # phpmp3
 <h1> Installation Guide </h1>
-<ol>=
+<ol>
   <li>Copy this complete code inside HTDOCS folder (if using XAMPP ) or paste in directory path in case of live server.</li>
   <li>Make Sure to import database from DB folder (onlinemp3.sql file).</li>
   <li>Check conncetion.php inside Includes & includes2 Folder and Define Database name etc.</li>
