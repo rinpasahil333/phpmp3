@@ -46,5 +46,8 @@ Later we will make it unified and will delete one of the includes folder.</p>
   <li> Single Page Transition.</li>
   <li> Seperate Sections For Artists that willl Allow them to upload their Songs.</li>
   <li> Different Sorting options for results</li>
+  <li> Login Popup same Page </li>
+  <li> Resize cat img </li>
+  <li> Icons Type wise and seperate from Album/category/Artist Art (Better Card View)</li>
 </ol>
   
