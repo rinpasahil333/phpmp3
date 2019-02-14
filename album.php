@@ -1,78 +1,31 @@
 <?php include("includes2/header.php");
-
+	
   require("language/language.php");
 
-     if(isset($_POST['data_search']))
-   {
-       
-     $artist_qry="SELECT * FROM tbl_artist 
-     WHERE tbl_artist.artist_name like '%".addslashes($_POST['search_text'])."%'  
-     ORDER BY tbl_artist.artist_name"; 
 
+  if(isset($_GET['artist_id'])){
+  	$artist_id = $_GET['artist_id'];
+  	// echo $artist_id;
+  }
+ 
+     $artist_qry="SELECT DISTINCT album_name,album_image FROM tbl_album t1 INNER JOIN tbl_artist t2 ON t1.id = '$artist_id'"; 
      $result=mysqli_query($mysqli,$artist_qry);
 
-   }
-   else
-   {
- 
 
-      $tableName="tbl_artist";   
-      $targetpage = "view_artist.php"; 
-      $limit = 8; 
-      
-      $query = "SELECT COUNT(*) as num FROM $tableName";
-      $total_pages = mysqli_fetch_array(mysqli_query($mysqli,$query));
-      $total_pages = $total_pages['num'];
-      
-      $stages = 3;
-      $page=0;
-      if(isset($_GET['page'])){
-      $page = mysqli_real_escape_string($mysqli,$_GET['page']);
-      }
-      if($page){
-        $start = ($page - 1) * $limit; 
-      }else{
-        $start = 0; 
-        } 
-      
-     $artist_qry="SELECT * FROM tbl_artist ORDER BY tbl_artist.artist_name LIMIT $start, $limit"; 
-     $result=mysqli_query($mysqli,$artist_qry);
-   }
-	
-	if(isset($_GET['artist_id']))
-	{
-
-	 
-		$cat_res=mysqli_query($mysqli,'SELECT * FROM tbl_artist WHERE id=\''.$_GET['artist_id'].'\'');
-		$cat_res_row=mysqli_fetch_assoc($cat_res);
-
-
-		if($cat_res_row['artist_image']!="")
-	    {
-	    	unlink('images/'.$cat_res_row['artist_image']);
-			  unlink('images/thumbs/'.$cat_res_row['artist_image']);
-
-		}
- 
-		Delete('tbl_artist','id='.$_GET['artist_id'].'');
-
-      
-		$_SESSION['msg']="12";
-		header( "Location:manage_artist.php");
-		exit;
-		
-	}	
-	 
 ?>
-                
-    <div class="row">
+
+<div class="row">
       <div class="col-xs-12">
         <div class="card mrg_bottom">
           <div class="page_title_block">
-            <div class="col-md-5 col-xs-12">
-              <div class="page_title">Artists</div>
+          	
+            <div class="col-md-4 col-xs-12">
+              <div class="page_title">Albums and Songs By Artists</div>
             </div>
-            <div class="col-md-7 col-xs-12">
+            <div class="col-md-4 col-xs-12"> 
+          		<img class="profile-img" src="../images/<?php echo getArtistImage($artist_id); ?>">
+          	</div>
+            <div class="col-md-4 col-xs-12">
               <div class="search_list">
                 <div class="search_block">
                 <form  method="post" action="">
@@ -80,7 +33,6 @@
                         <button type="submit" name="data_search" class="btn-search"><i class="fa fa-search"></i></button>
                 </form>
               </div>
-             <?php if(isAdmin()){ ?><div class="add_btn_primary"> <a href="add_artist.php?add=yes">Add Artist</a> </div> <?php } ?>
               </div>
             </div>
           </div>
@@ -107,18 +59,14 @@
               <div class="col-lg-3 col-sm-6 col-xs-12">
                 <div class="block_wallpaper">           
                   <div class="wall_image_title">
-                    <h2><a href="#"><?php echo $row['artist_name'];?></a></h2>
+                    <h2><a href="#"><?php echo $row['album_name'];?></a></h2>
                     <ul>
-                    <?php if(isAdmin()){?>
-                      <li><a href="add_artist.php?artist_id=<?php echo $row['id'];?>" data-toggle="tooltip" data-tooltip="Edit"><i class="fa fa-edit"></i></a></li>               
-                      <li><a href="?artist_id=<?php echo $row['id'];?>" data-toggle="tooltip" data-tooltip="Delete" onclick="return confirm('Are you sure you want to delete this artist?');"><i class="fa fa-trash"></i></a></li>
-                    <?php } else{ ?>               
+                                  
                       <li><a href="album/<?php echo $row['id'];?>" data-toggle="tooltip" data-tooltip="View Songs"><i class="fa fa-eye"></i></a></li>               
                       <li><a href="#" data-toggle="tooltip" data-tooltip="Send" onclick="return confirm('Are you sure you want to delete this artist?');"><i class="fa fa-location-arrow"></i></a></li>
-                        <?php } ?>
                     </ul>
                   </div>
-                  <span><img src="images/<?php echo $row['artist_image'];?>" /></span>
+                  <span><img src="../images/<?php echo $row['album_image'];?>" /></span>
                 </div>
               </div>
           <?php
@@ -141,5 +89,3 @@
         </div>
       </div>
     </div>
-        
-<?php include("includes/footer.php");?>       

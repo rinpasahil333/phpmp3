@@ -7248,6 +7248,18 @@ footer.app-footer .footer-copyright {
 	display: block;
 	border-bottom: 1px solid #dfe6e8;
 }
+.page_title_block img{
+	display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page_title_block .profile-img {
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	padding:1px;
+    border: 1px solid #021a40;
+}
 .page_title {
 	font-family: "Open Sans", sans-serif;
 	font-size: 1.2em;

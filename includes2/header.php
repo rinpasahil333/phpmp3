@@ -17,14 +17,14 @@
 <meta http-equiv="Content-Type"content="text/html;charset=UTF-8"/>
 <meta name="viewport"content="width=device-width, initial-scale=1.0">
 <title><?php echo APP_NAME;?></title>
-<link rel="stylesheet" type="text/css" href="assets/css/vendor.css">
-<link rel="stylesheet" type="text/css" href="assets/css/flat-admin.css">
+<link rel="stylesheet" type="text/css" href="/mymp3/assets/css/vendor.css">
+<link rel="stylesheet" type="text/css" href="/mymp3/assets/css/flat-admin.css">
 
 <!-- Theme -->
-<link rel="stylesheet" type="text/css" href="assets/css/theme/blue-sky.css">
-<link rel="stylesheet" type="text/css" href="assets/css/theme/blue.css">
-<link rel="stylesheet" type="text/css" href="assets/css/theme/red.css">
-<link rel="stylesheet" type="text/css" href="assets/css/theme/yellow.css">
+<link rel="stylesheet" type="text/css" href="/mymp3/assets/css/theme/blue-sky.css">
+<link rel="stylesheet" type="text/css" href="/mymp3/assets/css/theme/blue.css">
+<link rel="stylesheet" type="text/css" href="/mymp3/assets/css/theme/red.css">
+<link rel="stylesheet" type="text/css" href="/mymp3/assets/css/theme/yellow.css">
 
  <script src="assets/ckeditor/ckeditor.js"></script>
 
@@ -32,38 +32,38 @@
 <body>
 <div class="app app-default">
   <aside class="app-sidebar" id="sidebar">
-    <div class="sidebar-header"> <a class="sidebar-brand" href="home.php"><img src="images/<?php echo APP_LOGO;?>" alt="app logo" /></a>
+    <div class="sidebar-header"> <a class="sidebar-brand" href="home.php"><img src="/mymp3/images/<?php echo APP_LOGO;?>" alt="app logo" /></a>
       <button type="button" class="sidebar-toggle"> <i class="fa fa-times"></i> </button>
     </div>
     <div class="sidebar-menu">
       <ul class="sidebar-nav">
-        <li <?php if($currentFile=="index2.php"){?>class="active"<?php }?>> <a href="index2.php">
+        <li <?php if($currentFile=="index2.php"){?>class="active"<?php }?>> <a href="/mymp3/index2.php">
           <div class="icon"> <i class="fa fa-dashboard" aria-hidden="true"></i> </div>
           <div class="title">Dashboard</div>
           </a> 
         </li>
-        <li <?php if($currentFile=="test/view_artist.php" or $currentFile=="add_artist.php"){?>class="active"<?php }?>> <a href="view_artist.php">
+        <li <?php if($currentFile=="test/view_artist.php" or $currentFile=="add_artist.php"){?>class="active"<?php }?>> <a href="/mymp3/view_artist.php">
           <div class="icon"> <i class="fa fa-buysellads" aria-hidden="true"></i> </div>
           <div class="title">Artist</div>
           </a> 
         </li>
-        <li <?php if($currentFile=="test/view_category.php" or $currentFile=="add_category.php"){?>class="active"<?php }?>> <a href="view_category.php">
+        <li <?php if($currentFile=="test/view_category.php" or $currentFile=="add_category.php"){?>class="active"<?php }?>> <a href="/mymp3/view_category.php">
           <div class="icon"> <i class="fa fa-sitemap" aria-hidden="true"></i> </div>
           <div class="title">Categories</div>
           </a> 
         </li>
-        <li <?php if($currentFile=="test/view_album.php" or $currentFile=="add_album.php"){?>class="active"<?php }?>> <a href="view_album.php">
+        <li <?php if($currentFile=="test/view_album.php" or $currentFile=="add_album.php"){?>class="active"<?php }?>> <a href="/mymp3/view_album.php">
           <div class="icon"> <i class="fa fa-image" aria-hidden="true"></i> </div>
           <div class="title">Album</div>
           </a> 
         </li>
-        <li <?php if($currentFile=="view_playlist.php" or $currentFile=="add_playlist.php"){?>class="active"<?php }?>> <a href="view_playlist.php">
+        <li <?php if($currentFile=="view_playlist.php" or $currentFile=="add_playlist.php"){?>class="active"<?php }?>> <a href="/mymp3/view_playlist.php">
           <div class="icon"> <i class="fa fa-list" aria-hidden="true"></i> </div>
           <div class="title">Playlist</div>
           </a> 
         </li>
 
-        <li <?php if($currentFile=="view_mp3.php" or $currentFile=="add_mp3.php" or $currentFile=="edit_mp3.php"){?>class="active"<?php }?>> <a href="view_mp3.php">
+        <li <?php if($currentFile=="view_mp3.php" or $currentFile=="add_mp3.php" or $currentFile=="edit_mp3.php"){?>class="active"<?php }?>> <a href="/mymp3/view_mp3.php">
           <div class="icon"> <i class="fa fa-music" aria-hidden="true"></i> </div>
           <div class="title">Mp3 Songs</div>
           </a> 
@@ -71,19 +71,19 @@
         <?php if(isAdmin()) { ?>
       
 
-        <li <?php if($currentFile=="send_notification.php"){?>class="active"<?php }?>> <a href="send_notification.php">
+        <li <?php if($currentFile=="send_notification.php"){?>class="active"<?php }?>> <a href="/mymp3/send_notification.php">
           <div class="icon"> <i class="fa fa-bell" aria-hidden="true"></i> </div>
           <div class="title">Notification</div>
           </a> 
         </li>
        
-        <li <?php if($currentFile=="settings.php"){?>class="active"<?php }?>> <a href="settings.php">
+        <li <?php if($currentFile=="settings.php"){?>class="active"<?php }?>> <a href="/mymp3/settings.php">
           <div class="icon"> <i class="fa fa-cog" aria-hidden="true"></i> </div>
           <div class="title">Settings</div>
           </a> 
         </li>
 
-        <li <?php if($currentFile=="api_urls.php"){?>class="active"<?php }?>> <a href="api_urls.php">
+        <li <?php if($currentFile=="api_urls.php"){?>class="active"<?php }?>> <a href="/mymp3/api_urls.php">
           <div class="icon"> <i class="fa fa-exchange" aria-hidden="true"></i> </div>
           <div class="title">API URLS</div>
           </a> 

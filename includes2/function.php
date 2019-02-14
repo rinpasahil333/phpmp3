@@ -52,22 +52,21 @@ function isLoggedIn() {
         }
 
 }
-function normalUser($username, $password){
-    global $mysqli;
 
-    $sql = "SELECT id,username FROM tbl_users where username = '".$username."' and password = '".md5($password)."'";       
-    $result = mysqli_query($mysqli,$sql);
-    $num_rows = mysqli_num_rows($result);
-     
-    if ($num_rows > 0){
-        while ($row = mysqli_fetch_array($result)){
-            echo $_SESSION['USER_ID'] = $row['id'];
-                        echo $_SESSION['USERNAME'] = $row['username'];
-                                      
-        return true; 
-        }
-    }
+function getAlbumsFromID($artist_id) {
+     global $mysqli;
+     $artist_qry="SELECT DISTINCT album_name,album_image FROM tbl_album t1 INNER JOIN tbl_artist t2 ON t1.id = '$artist_id'"; 
+     $result=mysqli_fetch_array(mysqli_query($mysqli,$artist_qry));
+     return $result;
 }
+function getArtistImage($artist_id) {
+     global $mysqli;
+     $profile_img_qry = "SELECT artist_image FROM tbl_artist WHERE id = '".$artist_id."'";
+     $result2=mysqli_fetch_array(mysqli_query($mysqli,$profile_img_qry));
+     $result2 = $result2['artist_image'];
+     return $result2;
+}
+
 
 # Insert Data 
 function Insert($table, $data){
@@ -120,7 +119,13 @@ function Update($table_name, $form_data, $where_clause='')
     return mysqli_query($mysqli,$sql);
 }
 
- 
+ function getProfileImage($artist_id){
+    $profile_img_qry = "SELECT artist_image FROM tbl_artist WHERE artist_id = '".$artist_id."'";
+     $result2=mysqli_query($mysqli,$profile_img_qry);
+     $value = mysql_fetch_object($result2);
+     echo $value;
+
+ }
 //Delete Data, the where clause is left optional incase the user wants to delete every row!
 function Delete($table_name, $where_clause='')
 {   

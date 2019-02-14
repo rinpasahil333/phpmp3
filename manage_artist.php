@@ -104,7 +104,7 @@
               while($row=mysqli_fetch_array($result))
               {         
           ?>
-              <div class="col-lg-3 col-sm-6 col-xs-12">
+              <div class="col-lg-3 col-sm-3 col-xs-6">
                 <div class="block_wallpaper">           
                   <div class="wall_image_title">
                     <h2><a href="#"><?php echo $row['artist_name'];?></a></h2>
